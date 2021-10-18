@@ -1,0 +1,25 @@
+body {
+    background-color: azure ;
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+    font-size:  100px;
+    color:black;
+    margin-top: 90px;
+    width: fit-content;
+}
+
+.kreis {
+    background-image: url(402810.jpg);
+    height: 400px;
+    width: 600px;
+    border: 8px solid black;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    top: 0;
+    width: 800px;
+}
