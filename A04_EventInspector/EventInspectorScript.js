@@ -1,8 +1,8 @@
 //Abgabe in Gruppe mit Nina Distler
 var EventInspector;
 (function (EventInspector) {
-    var positionx;
-    var positiony;
+    var positionX;
+    var positionY;
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         document.addEventListener("mousemove", setInfoBox);
@@ -16,9 +16,10 @@ var EventInspector;
     document.getElementById("div0").addEventListener("keyup", logInfo);
     document.getElementById("div1").addEventListener("keyup", logInfo);
     function setInfoBox(_event) {
-        positionx = _event.x;
-        positiony = _event.y;
-        document.getElementById("span").innerHTML = "x Position:" + positionx + ", y Position:" + positiony;
+        positionX = _event.x;
+        positionY = _event.y;
+        document.getElementById("span").innerHTML = "x Position:" + positionX + ", y Position:" + positionY + "<br>";
+        document.getElementById("span").innerHTML += "Event Target: " + _event.target;
         document.getElementById("span").style.left = _event.x + "px";
         document.getElementById("span").style.top = _event.y + "px";
     }

@@ -1,8 +1,8 @@
 //Abgabe in Gruppe mit Nina Distler
 namespace EventInspector {
 
-    let positionx: number;
-    let positiony: number;
+    let positionX: number;
+    let positionY: number;
 
     window.addEventListener("load", handleLoad);
 
@@ -23,13 +23,15 @@ namespace EventInspector {
     document.getElementById("div1").addEventListener("keyup", logInfo); 
 
     function setInfoBox(_event: MouseEvent): void {
-        positionx = _event.x;
-        positiony = _event.y;
+        positionX = _event.x;
+        positionY = _event.y;
         
-        document.getElementById("span").innerHTML = "x Position:" + positionx + ", y Position:" + positiony;
+        document.getElementById("span").innerHTML = "x Position:" + positionX + ", y Position:" + positionY + "<br>";
+        document.getElementById("span").innerHTML += "Event Target: " + _event.target;
             
         document.getElementById("span").style.left = _event.x + "px";
-        document.getElementById("span").style.top = _event.y + "px";}
+        document.getElementById("span").style.top = _event.y + "px";
+    }
 
     function logInfo(_event: Event): void {
         console.log("current target:" + _event.currentTarget);
