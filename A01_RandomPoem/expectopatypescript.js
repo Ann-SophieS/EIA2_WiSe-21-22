@@ -2,7 +2,7 @@ var RandomPoem;
 (function (RandomPoem) {
     var subjekt = ["Harry ", "Ron ", "Hermine ", "Padfoot ", "Snape ", "Voldemort ", "Dumbledore ", "Fred ", "George ", "Hagrid "];
     var praedikat = ["liebt ", "sucht ", "mag ", "verzaubert ", "hasst ", "verachtet ", "fühlt sich bedroht, durch ", "bleibt länger für "];
-    var objekt = ["Hogwarts.", "Harry.", "den Elderstab.", "Zaubertränke.", "die Karte des Herumtreibers.", "den kopflosen Nick.", "Kuchen.", "Silberschweif.", "Dementoren."];
+    var objekt = ["Hogwarts.", "Harry.", "den Elderstab.", "Zaubertränke.", "die Karte des Herumtreibers.", "den kopflosen Nick.", "Kuchen.", "Silberschweif.", "Dementoren"];
     for (var i = subjekt.length; i > 0; i--) {
         var y = getVerse(subjekt, praedikat, objekt);
         console.log(y);
@@ -18,3 +18,4 @@ var RandomPoem;
         return (verse);
     }
 })(RandomPoem || (RandomPoem = {}));
+//# sourceMappingURL=expectopatypescript.js.map

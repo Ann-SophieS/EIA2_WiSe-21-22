@@ -29,3 +29,4 @@ var EventInspector;
         console.log(_event);
     }
 })(EventInspector || (EventInspector = {}));
+//# sourceMappingURL=EventInspectorScript.js.map
