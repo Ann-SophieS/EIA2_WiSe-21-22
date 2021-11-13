@@ -1,0 +1,55 @@
+body{
+    background-color: #a2e1db;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-size: 300%;
+    text-decoration-line: underline;
+}
+
+.Rahmen{
+    border-style: solid;
+    border: 1px 1px 1px 1px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: honeydew;
+    font-size: 20px;
+    width: fit-content;
+}
+
+#textfeld {
+    text-align: center;
+}
+#timeSelect{
+    text-align: center;
+}
+#fontType{
+    text-align: center;
+}
+#cardColorFront{
+    text-align: center;
+}
+#cardColorBack{
+    text-align: center;
+}
+#fontColor{
+    text-align: center;
+}
+#cardSize{
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+.intro{
+    text-align: center;
+}
+button {
+    height: 50px;
+    width: 70px; 
+    border-radius: 10px; 
+    background-color: #a2e1db
+    ;
+}

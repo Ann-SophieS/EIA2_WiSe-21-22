@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Stylesheet_Settings.css">
+    <script src="script_Settings.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Memory</h1> 
+
+    <div class="intro"><p>How good is your own memory?
+        Find out in this fun game.
+
+        The rules are simple: <br>
+        Choose your cards Color<br>
+        Choose your cards Font Color<br>
+        Set a timer of choice<br>
+        Type in a word or more to test your memory. <br>
+        Have fun!<br></p></div>
+
+<center><div class="Rahmen">  
+
+    <fieldset class="fieldsets" id="textfeld">
+        <p>Gib dein Wort ein: 
+            <input type="text" placeholder="Gib hier etwas ein" required="" /></p>
+    </fieldset>
+
+    <fieldset class="fieldsets" id="cardSize">
+        <p>Choose the size of your cards</p>
+            <input type="range" id="size" name="size" min="50" max="250" step="50"> <br />
+    </fieldset>
+
+    <fieldset class="fieldsets" id="timeSelect">
+        <p>Select your countdown: <select name="Select" id="select">
+            <option value="option10sec">10 Sekunden</option>
+            <option value="option20sec" selected="">20 Sekunden</option>
+            <option value="option30sec" selected="">30 Sekunden</option>
+        </select></p>
+    </fieldset>
+
+    <fieldset class="fieldsets" id="fontType">
+        <p>Font: <select name="Select" id="select">
+            <option value= "Arial, Helvetica, sans-serif" type= "radio" id= "arial" name="font">Arial</option>
+            <option value= "'Times New Roman', Times, serif" type= "radio" id= "timesNew" name="font">Times New Roman</option>
+            <option value= "sans-serif" type= "radio" id= "comicSans" name="font">Comic Sans</option>
+        </select></p>
+    </fieldset>
+
+    <fieldset class="fieldsets" id="cardColorBack">
+            <p>Choose the cards back color</p>
+                <input type="color" id="head" name="head" value="#e66465">
+    </fieldset>
+    
+    <fieldset class="fieldsets" id="cardColorFront">
+        <p>Choose the cards front color</p>
+            <input type="color" id="head" name="head" value="#e66465">
+    </fieldset>
+    
+    <fieldset class="fieldsets" id="fontColor">
+            <p> Choose the Fonts color </p>
+                <input type="color" id="body" name="body" value="#f6b73c">
+    </fieldset> </br>
+
+    <button name="Button" id="playButton">Start Game</button>
+
+</div></center>       
+</body>
+</html>
