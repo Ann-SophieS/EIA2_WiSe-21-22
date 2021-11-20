@@ -1,11 +1,55 @@
-namespace SequenzmemorySetting{
+namespace SequenzmemorySetting {
 
-  window.addEventListener("load", handleLoad);
+  /*
+  Global Variables
+  */
+  let finalWord: String;
+  let cards: HTMLSpanElement[];
 
-  function handleLoad(_event: Event): void {
-    let startButton: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#playButton");
-    startButton.addEventListener("pointerup", startGame);
-}
+  interface GameSettings {
+    finalWord: String; 
+    cardSize: number;
+    countdownDuration: number; 
+    font: String;
+    cardBackColor: String; 
+    cardFrontColor: String; 
+    cardFontColor: String;
+  }
+  
+
+  const form: HTMLFormElement = document.querySelector("#settingsForm");
+
+  
+
+  form.onsubmit = () => {
+    console.log((document.querySelector("#cardSize") as HTMLInputElement).value);
+    let settings: GameSettings = {
+      finalWord: (document.querySelector("#textfeld") as HTMLInputElement).value as String,
+      cardSize: +(document.querySelector("#cardSize") as HTMLInputElement).value,
+      countdownDuration: +(document.querySelector("#durationSelect") as HTMLInputElement).value,
+      font: (document.querySelector("#fontSelect") as HTMLInputElement).value as String,
+      cardBackColor: (document.querySelector("#cardColorBack") as HTMLInputElement).value as String,
+      cardFrontColor: (document.querySelector("#cardColorFront") as HTMLInputElement).value as String,
+      cardFontColor: (document.querySelector("#fontColor") as HTMLInputElement).value as String
+    };
+
+    startGame(settings);
+
+    return false; // prevent reload
+  };
+
+
+
+  function startGame(settings: GameSettings): void {
+    const htmlBody: HTMLElement = document.querySelector("body");
+    console.log("Hello from the startGame function.");
+    console.log(settings);
+  }
+
+
+  function createCard(): void {
+    return;
+  }
 
 }
 
