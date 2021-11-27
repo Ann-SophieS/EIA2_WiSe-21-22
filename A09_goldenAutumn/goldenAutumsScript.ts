@@ -25,6 +25,11 @@ function handleLoad(_event: Event): void {
 
     mountains({ x: 0, y: horizon}, 75, 200, "grey", "white");
     mountains({ x: 0, y: horizon}, 50, 150, "grey", "lightgrey");
+
+    leaf({ x: 600, y: 800 }, { x: 1000, y: 400 });
+
+    squirrel({ x: 50, y: 730 }, { x: 250, y: 250 });
+    squirrel({ x: 650, y: 750 }, { x: 250, y: 250 });
     
 
 }
@@ -119,4 +124,40 @@ function mountains(_position: Vector, _min: number, _max: number, _colorLow: str
 
         crc2.restore();
     }
+
+function leaf(_position: Vector, _size: Vector): void {
+        console.log("Leave", _position, _size);
+        let nParticles: number = 15;
+        let rParcticles: number = 10;
+        let particle: Path2D = new Path2D();
+        let gradient: CanvasGradient = crc2.createRadialGradient(0, 0, 0, 0, 0, rParcticles);
+
+        particle.arc(0, 0, rParcticles, 0, 0.9 * Math.PI);
+        gradient.addColorStop(0, "orange");
+
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+
+        crc2.fillStyle = gradient;
+
+        for (let drawn: number = 0; drawn < nParticles; drawn++) {
+            crc2.save();
+            let x: number = (Math.random() - 0.5) * _size.x;
+            let y: number = - (Math.random() * _size.y);
+            crc2.translate(x, y);
+            crc2.fill(particle);
+            crc2.restore();
+        }
+        crc2.restore();
+        //add second leaf with other parameters but basically same code
+    }
+
+function squirrel(_position: Vector, _size: Vector): void { //funktioniert nicht ganz
+        crc2.beginPath();
+        crc2.fillStyle = "brown";
+        crc2.arc(_position.x + 130, _position.y + 19, 30, 0, 2 * Math.PI);
+        crc2.arc(_position.x + 132, _position.y + -23, 20, 0, 2 * Math.PI);
+        crc2.closePath();
+        crc2.fill();
+}
 }
