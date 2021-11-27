@@ -44,7 +44,7 @@ var GoldenerHerbst;
     function drawCloud(_position, _size) {
         console.log("Cloud", _position);
         var nParticles = 45;
-        var radiusParcticle = 50; // r=radius
+        var radiusParcticle = 50;
         var particle = new Path2D();
         var gradient = crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParcticle);
         particle.arc(0, 0, radiusParcticle, 0, 2 * Math.PI);

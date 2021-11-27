@@ -67,7 +67,7 @@ function drawSun(_position: Vector): void {
 function drawCloud(_position: Vector, _size: Vector): void {
     console.log("Cloud", _position);
     let nParticles: number = 45;
-    let radiusParcticle: number = 50;                                            // r=radius
+    let radiusParcticle: number = 50;
     let particle: Path2D = new Path2D();
     let gradient: CanvasGradient = crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParcticle);
 
