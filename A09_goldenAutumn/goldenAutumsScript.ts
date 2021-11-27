@@ -1,3 +1,4 @@
+//Als Quelle wurden hauptsächlich die gegebenen Videos genutzt. Bäume und Eichhörnchen bewegen sich aber leider nicht zufällig sondern sind fest verankert
 namespace GoldenerHerbst {
 interface Vector {
     x: number;
@@ -23,13 +24,16 @@ function handleLoad(_event: Event): void {
 
     drawCloud ({ x: 550, y: 150}, {x: 225, y: 100});
 
-    mountains({ x: 0, y: horizon}, 75, 200, "grey", "white");
-    mountains({ x: 0, y: horizon}, 50, 150, "grey", "lightgrey");
+    drawMountains({ x: 0, y: horizon}, 75, 200, "grey", "white");
+    drawMountains({ x: 0, y: horizon}, 50, 150, "grey", "lightgrey");
 
-    leaf({ x: 600, y: 800 }, { x: 1000, y: 400 });
+    drawleaf({ x: 600, y: 800 }, { x: 1000, y: 400 });
 
-    squirrel({ x: 50, y: 730 }, { x: 250, y: 250 });
-    squirrel({ x: 650, y: 750 }, { x: 250, y: 250 });
+    drawSquirrel({ x: 300, y: 400 }, { x: 250, y: 250 });
+    drawSquirrel({ x: 100, y: 500 }, { x: 250, y: 250 });
+    
+    drawTree({x: 600, y: 400});
+    drawTree({x: 200, y: 500});
     
 
 }
@@ -91,7 +95,7 @@ function drawCloud(_position: Vector, _size: Vector): void {
     crc2.restore();
     }
 
-function mountains(_position: Vector, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
+function drawMountains(_position: Vector, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
         console.log("Mountains");
         let stepMin: number = 50;
         let stepMax: number = 150;
@@ -125,7 +129,7 @@ function mountains(_position: Vector, _min: number, _max: number, _colorLow: str
         crc2.restore();
     }
 
-function leaf(_position: Vector, _size: Vector): void {
+function drawleaf(_position: Vector, _size: Vector): void {
         console.log("Leave", _position, _size);
         let nParticles: number = 15;
         let rParcticles: number = 10;
@@ -152,12 +156,37 @@ function leaf(_position: Vector, _size: Vector): void {
         //add second leaf with other parameters but basically same code
     }
 
-function squirrel(_position: Vector, _size: Vector): void { //funktioniert nicht ganz
+function drawSquirrel(_position: Vector, _size: Vector): void { //funktioniert nicht ganz
         crc2.beginPath();
         crc2.fillStyle = "brown";
-        crc2.arc(_position.x + 130, _position.y + 19, 30, 0, 2 * Math.PI);
-        crc2.arc(_position.x + 132, _position.y + -23, 20, 0, 2 * Math.PI);
+        crc2.arc(_position.x + 130, _position.y + 20, 25, 0, 1.5 * Math.PI);
+        crc2.arc(_position.x + 132, _position.y + -20, 20, 0, 4 * Math.PI);
+        crc2.arc(_position.x + 165, _position.y + -1, 0, 0, 0 * Math.PI);
         crc2.closePath();
         crc2.fill();
+    
+        crc2.restore();
+}
+
+
+
+function drawTree(_position: Vector): void {
+
+    crc2.save();
+    crc2.translate(_position.x, _position.y);
+    crc2.beginPath();
+
+    crc2.fillStyle = "brown";
+    crc2.fillRect(0, 0, 15, -60);
+
+    crc2.fillStyle = "orange";
+    drawCircle(0, -100, 50);
+    drawCircle(-15, -100, 50);
+    function drawCircle(_x: number, _y: number, _radius: number): void {
+    crc2.beginPath();
+    crc2.arc(_x, _y, _radius, 0, 2 * Math.PI);
+    crc2.fill();
+}
+    crc2.restore();
 }
 }
