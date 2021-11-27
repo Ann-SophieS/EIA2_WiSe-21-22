@@ -8,11 +8,12 @@ var GoldenerHerbst;
         if (!canvas)
             return;
         crc2 = canvas.getContext("2d");
+        var horizon = crc2.canvas.height * golden;
         drawBackground();
         drawSun({ x: 100, y: 100 });
         drawCloud({ x: 550, y: 150 }, { x: 225, y: 100 });
-        mountains({ x: 0, y: 600 }, 50, 320, "grey", "white");
-        mountains({ x: 0, y: 600 }, 70, 160, "grey", "white");
+        mountains({ x: 0, y: horizon }, 75, 200, "grey", "white");
+        mountains({ x: 0, y: horizon }, 50, 150, "grey", "lightgrey");
     }
     function drawBackground() {
         console.log("Background");
